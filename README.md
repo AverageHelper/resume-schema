@@ -10,7 +10,7 @@ Standard, Specification, Schema
 > [!NOTE]
 > This is a fork of [jsonresume/resume-schema](https://github.com/jsonresume/resume-schema). Goals of this project include:
 >
-> - [ ] Add a `pronouns` field
+> - [x] Add a `basics.pronouns` field
 > - [ ] Port to TypeScript
 
 A mirror also exists at [git.average.name](https://git.average.name/AverageHelper/resume-schema).
