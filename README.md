@@ -1,9 +1,9 @@
 # JSON Resume Schema
 
-<!-- [![GitHub Releases](https://badgen.net/github/tag/jsonresume/resume-schema)](https://github.com/jsonresume/resume-schema/releases)
-[![NPM Release](https://badgen.net/npm/v/resume-schema)](https://www.npmjs.com/package/resume-schema)
-[![Latest Status](https://github.com/jsonresume/resume-schema/workflows/Latest/badge.svg)](https://github.com/vanillawc/wc-template/actions)
-[![Release Status](https://github.com/jsonresume/resume-schema/workflows/Release/badge.svg)](https://github.com/vanillawc/wc-template/actions) -->
+<!-- [![GitHub Releases](https://badgen.net/github/tag/jsonresume/resume-schema)](https://github.com/jsonresume/resume-schema/releases) -->
+<!-- [![NPM Release](https://badgen.net/npm/v/@averagehelper/resume-schema)](https://www.npmjs.com/package/@averagehelper/resume-schema) -->
+<!-- [![Latest Status](https://github.com/jsonresume/resume-schema/workflows/Latest/badge.svg)](https://github.com/vanillawc/wc-template/actions) -->
+<!-- [![Release Status](https://github.com/jsonresume/resume-schema/workflows/Release/badge.svg)](https://github.com/vanillawc/wc-template/actions) -->
 
 Standard, Specification, Schema
 
@@ -22,14 +22,14 @@ A read-only mirror exists at [my Forgejo instance](https://git.average.name/Aver
 
 ### Getting started
 
-```
-npm install --save resume-schema
+```sh
+npm install --save @averagehelper/resume-schema
 ```
 
 To use
 
 ```js
-const resumeSchema = require("resume-schema");
+const resumeSchema = require("@averagehelper/resume-schema");
 resumeSchema.validate(
   { name: "Thomas" },
   function (err, report) {
@@ -49,7 +49,7 @@ More likely
 
 ```js
 var fs = require("fs");
-var resumeSchema = require("resume-schema");
+var resumeSchema = require("@averagehelper/resume-schema");
 var resumeObject = JSON.parse(fs.readFileSync("resume.json", "utf8"));
 resumeSchema.validate(resumeObject);
 ```
@@ -57,7 +57,7 @@ resumeSchema.validate(resumeObject);
 The JSON Resume schema is available from:
 
 ```js
-require("resume-schema").schema;
+require("@averagehelper/resume-schema").schema;
 ```
 
 ### Contribute
