@@ -65,6 +65,42 @@
       "url": null
     }
   },
+  "pronounsSimpleValid": {
+    "basics": {
+      "pronouns": "he/him"
+    }
+  },
+  "pronounsSimpleInvalid": {
+    "basics": {
+      "pronouns": null
+    }
+  },
+  "pronounsListValid": {
+    "basics": {
+      "pronouns": ["they", "them"]
+    }
+  },
+  "pronounsListInvalid": {
+    "basics": {
+      "pronouns": [null]
+    }
+  },
+  "pronounsObjectValid": {
+    "basics": {
+      "pronouns": {
+        "content": "she/her",
+        "url": "https://pronouns.cc/pronouns/she/her/her/hers/herself"
+      }
+    }
+  },
+  "pronounsObjectInvalid": {
+    "basics": {
+      "pronouns": {
+        "content": null,
+        "url": "https://pronouns.cc/pronouns/she/her/her/hers/herself"
+      }
+    }
+  },
   "summaryValid": {
     "basics": {
       "summary": "Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford."

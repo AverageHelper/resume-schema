@@ -114,6 +114,55 @@ test('basics.url - invalid', (t) => {
   t.end();
 });
 
+test("basics.pronouns simple - valid", (t) => {
+  validate(fixtures.pronounsSimpleValid, (err, valid) => {
+    t.equal(err, null, "err should be null");
+    t.true(valid, "valid is true");
+  });
+  t.end();
+});
+
+test("basics.pronouns simple - invalid", (t) => {
+  validate(fixtures.pronounsSimpleInvalid, (err, valid) => {
+    t.notEqual(err, null, "err should contain an error");
+    t.false(valid, "valid is false");
+  });
+  t.end();
+});
+
+test("basics.pronouns list - valid", (t) => {
+  validate(fixtures.pronounsListValid, (err, valid) => {
+    t.equal(err, null, "err should be null");
+    t.true(valid, "valid is true");
+  });
+  t.end();
+});
+
+test("basics.pronouns list - invalid", (t) => {
+  validate(fixtures.pronounsListInvalid, (err, valid) => {
+    t.notEqual(err, null, "err should contain an error");
+    t.false(valid, "valid is false");
+  });
+  t.end();
+});
+
+test("basics.pronouns object - valid", (t) => {
+  validate(fixtures.pronounsObjectValid, (err, valid) => {
+    t.equal(err, null, "err should be null");
+    t.true(valid, "valid is true");
+  });
+  t.end();
+});
+
+test("basics.pronouns object - invalid", (t) => {
+  validate(fixtures.pronounsObjectInvalid, (err, valid) => {
+    t.notEqual(err, null, "err should contain an error");
+    t.false(valid, "valid is false");
+  });
+  t.end();
+});
+
+
 test('basics.summary - valid', (t) => {
   validate(fixtures.summaryValid, (err, valid) => {
     t.equal(err, null, 'err should be null');

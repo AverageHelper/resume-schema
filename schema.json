@@ -6,6 +6,17 @@
       "type": "string",
       "description": "Similar to the standard date type, but each section after the year is optional. e.g. 2014-06-29 or 2023-04",
       "pattern": "^([1-2][0-9]{3}-[0-1][0-9]-[0-3][0-9]|[1-2][0-9]{3}-[0-1][0-9]|[1-2][0-9]{3})$"
+    },
+    "pronounSimple": {
+      "type": "string",
+      "description": "e.g. they/them/theirs"
+    },
+    "pronounList": {
+      "type": "array",
+      "description": "An array containing your preferred pronouns, e.g. ['they', 'them', 'theirs']",
+      "items": {
+        "type": "string"
+      }
     }
   },
   "properties": {
@@ -37,6 +48,38 @@
         "phone": {
           "type": "string",
           "description": "Phone numbers are stored as strings so use any format you like, e.g. 712-117-2923"
+        },
+        "pronouns": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/pronounSimple"
+            },
+            {
+              "$ref": "#/definitions/pronounList"
+            },
+            {
+              "type": "object",
+              "description": "pronoun string + link",
+              "additionalProperties": true,
+              "properties": {
+                "content": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/definitions/pronounSimple"
+                    },
+                    {
+                      "$ref": "#/definitions/pronounList"
+                    }
+                  ]
+                },
+                "url": {
+                  "type": "string",
+                  "description": "e.g. http://my.pronoun.is/they",
+                  "format": "uri"
+                }
+              }
+            }
+          ]
         },
         "url": {
           "type": "string",
