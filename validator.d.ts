@@ -9,3 +9,6 @@ import type schemaJson from "./schema.json";
 export function validate(resumeJson: object, callback: (error: unknown, result: { valid: boolean }) => unknown): void;
 
 export const schema: typeof schemaJson;
+
+// Generated schema interface types
+export type * from "./resume.d.ts";
