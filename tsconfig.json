@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    // Node 10, see https://stackoverflow.com/a/57607634
+    "module": "CommonJS",
+    "target": "ES2018",
+    "lib": ["ES2018"],
+    "resolveJsonModule": true,
+		"isolatedModules": true,
+		"allowJs": false,
+		"declaration": true,
+    "strict": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"exactOptionalPropertyTypes": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"useUnknownInCatchVariables": true,
+		"noUncheckedIndexedAccess": true,
+		"forceConsistentCasingInFileNames": true,
+  },
+  "include": ["*.ts"]
+}

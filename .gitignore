@@ -1,1 +1,4 @@
 node_modules/
+validator.js
+validator.d.ts
+resume.d.ts

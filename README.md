@@ -2,21 +2,26 @@
 
 [![GitHub Releases](https://badgen.net/github/tag/AverageHelper/resume-schema)](https://github.com/AverageHelper/resume-schema/releases)
 [![NPM Release](https://badgen.net/npm/v/@averagehelper/resume-schema)](https://www.npmjs.com/package/@averagehelper/resume-schema)
-<!-- [![Latest Status](https://github.com/AverageHelper/resume-schema/workflows/Latest/badge.svg)](https://github.com/vanillawc/wc-template/actions) -->
-<!-- [![Release Status](https://github.com/AverageHelper/resume-schema/workflows/Release/badge.svg)](https://github.com/vanillawc/wc-template/actions) -->
+<!-- [![Latest Status](https://github.com/AverageHelper/resume-schema/workflows/Latest/badge.svg)](https://github.com/AverageHelper/resume-schema/actions) -->
+<!-- [![Release Status](https://github.com/AverageHelper/resume-schema/workflows/Release/badge.svg)](https://github.com/AverageHelper/resume-schema/actions) -->
 
 Standard, Specification, Schema
 
 > [!NOTE]
-> This is a fork of [jsonresume/resume-schema](https://github.com/jsonresume/resume-schema). Goals of this project include:
->
-> - [x] Add a `basics.pronouns` field
-> - [x] Basic TypeScript support
-> - [x] Generate a TypeScript interface from the JSON schema, to make generic theme templates easier to construct
-> - [ ] Clean up and update the changelog, perhaps using the [keep a changelog](https://keepachangelog.com) standard.
-> - [ ] Simplify unit tests. Surely there's a way to generate each valid/invalid test case from the existing well-labeled valid/invalid test fixtures!
->
-> I might add more as ideas come to me. Not sure all of my changes will make it upstream, but a gal can try!
+> This is a fork of [jsonresume/resume-schema](https://github.com/jsonresume/resume-schema).
+
+My goals for this project:
+- [x] Add a `basics.pronouns` field
+- [x] Basic TypeScript declarations around exported structures
+- [x] Generate a TypeScript interface from the JSON schema, to make generic theme templates easier to construct
+- [x] Port to TypeScript
+- [ ] Clean up and update the changelog, perhaps using the [keep a changelog](https://keepachangelog.com) standard.
+- [ ] Simplify unit tests. Surely there's a way to generate each valid/invalid test case from the existing well-labeled valid/invalid test fixtures!
+- [ ] Add a `Promise`-compatible interface for `validate`
+- [ ] Build both legacy CJS and modern ESM bundles
+- [ ] Switch to tab indentation [for accessibility](https://www.reddit.com/r/javascript/comments/c8drjo/nobody_talks_about_the_real_reason_to_use_tabs/)
+
+I might add more as ideas come to me. I plan to open upstream pull requests once in a while. I'm not sure all of my changes will make it upstream, but a gal can try!
 
 A read-only mirror exists at [my Forgejo instance](https://git.average.name/AverageHelper/resume-schema).
 
