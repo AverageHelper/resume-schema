@@ -12,6 +12,7 @@ Standard, Specification, Schema
 >
 > - [x] Add a `basics.pronouns` field
 > - [x] Basic TypeScript support
+> - [x] Generate a TypeScript interface from the JSON schema, to make generic theme templates easier to construct
 > - [ ] Clean up and update the changelog, perhaps using the [keep a changelog](https://keepachangelog.com) standard.
 > - [ ] Simplify unit tests. Surely there's a way to generate each valid/invalid test case from the existing well-labeled valid/invalid test fixtures!
 >
