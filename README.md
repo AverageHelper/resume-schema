@@ -1,11 +1,19 @@
 # JSON Resume Schema
 
-[![GitHub Releases](https://badgen.net/github/tag/jsonresume/resume-schema)](https://github.com/jsonresume/resume-schema/releases)
+<!-- [![GitHub Releases](https://badgen.net/github/tag/jsonresume/resume-schema)](https://github.com/jsonresume/resume-schema/releases)
 [![NPM Release](https://badgen.net/npm/v/resume-schema)](https://www.npmjs.com/package/resume-schema)
 [![Latest Status](https://github.com/jsonresume/resume-schema/workflows/Latest/badge.svg)](https://github.com/vanillawc/wc-template/actions)
-[![Release Status](https://github.com/jsonresume/resume-schema/workflows/Release/badge.svg)](https://github.com/vanillawc/wc-template/actions)
+[![Release Status](https://github.com/jsonresume/resume-schema/workflows/Release/badge.svg)](https://github.com/vanillawc/wc-template/actions) -->
 
 Standard, Specification, Schema
+
+> [!NOTE]
+> This is a fork of [jsonresume/resume-schema](https://github.com/jsonresume/resume-schema). Goals of this project include:
+>
+> - [ ] Add a `pronouns` field
+> - [ ] Port to TypeScript
+
+A mirror also exists at [git.average.name](https://git.average.name/AverageHelper/resume-schema).
 
 ### Getting started
 

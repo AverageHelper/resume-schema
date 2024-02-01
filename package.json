@@ -1,7 +1,7 @@
 {
-  "name": "resume-schema",
-  "version": "0.1.4",
-  "description": "JSON Resume Schema",
+  "name": "@averagehelper/resume-schema",
+  "version": "1.0.0",
+  "description": "JSON Resume Schema, with extras",
   "main": "validator.js",
   "scripts": {
     "test": "npm run validate && npm run test-units",
@@ -12,11 +12,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jsonresume/resume-schema.git"
+    "url": "git://github.com/AverageHelper/resume-schema.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jsonresume/resume-schema/issues"
+    "url": "https://github.com/AverageHelper/resume-schema/issues"
   },
   "files": [
     "sample.resume.json",
