@@ -11,9 +11,13 @@ Standard, Specification, Schema
 > This is a fork of [jsonresume/resume-schema](https://github.com/jsonresume/resume-schema). Goals of this project include:
 >
 > - [x] Add a `basics.pronouns` field
-> - [ ] Port to TypeScript
+> - [x] Basic TypeScript support
+> - [ ] Clean up and update the changelog, perhaps using the [keep a changelog](https://keepachangelog.com) standard.
+> - [ ] Simplify unit tests. Surely there's a way to generate each valid/invalid test case from the existing well-labeled valid/invalid test fixtures!
+>
+> I might add more as ideas come to me. Not sure all of my changes will make it upstream, but a gal can try!
 
-A mirror also exists at [git.average.name](https://git.average.name/AverageHelper/resume-schema).
+A read-only mirror exists at [my Forgejo instance](https://git.average.name/AverageHelper/resume-schema).
 
 ### Getting started
 
