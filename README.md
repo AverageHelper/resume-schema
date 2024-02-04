@@ -52,7 +52,7 @@ try {
 Simplified:
 
 ```js
-const fs = require("fs");
+const fs = require("node:fs");
 const resumeSchema = require("@averagehelper/resume-schema");
 const resume = JSON.parse(fs.readFileSync("resume.json", "utf8"));
 
@@ -62,7 +62,7 @@ const resumeObject = await resumeSchema.validated(resume); // throws if invalid
 Callback:
 
 ```js
-const fs = require("fs");
+const fs = require("node:fs");
 const resumeSchema = require("@averagehelper/resume-schema");
 const resume = JSON.parse(fs.readFileSync("resume.json", "utf8"));
 
@@ -75,10 +75,20 @@ resumeSchema.validate(resume, function (err, result) {
 });
 ```
 
+TypeScript compatible:
+
+```ts
+import fs from "node:fs";
+import { validated } from "@averagehelper/resume-schema";
+const resume = JSON.parse(fs.readFileSync("resume.json", "utf8"));
+
+const resumeObject = await validated(resume); // throws if invalid
+```
+
 The JSON Resume schema is available from:
 
 ```js
-require("@averagehelper/resume-schema").schema;
+import { schema } from "@averagehelper/resume-schema";
 ```
 
 ### Contribute
