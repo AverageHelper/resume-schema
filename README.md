@@ -75,14 +75,25 @@ resumeSchema.validate(resume, function (err, result) {
 });
 ```
 
-TypeScript compatible:
+ESM:
 
-```ts
+```js
 import fs from "node:fs";
 import { validated } from "@averagehelper/resume-schema";
 const resume = JSON.parse(fs.readFileSync("resume.json", "utf8"));
 
 const resumeObject = await validated(resume); // throws if invalid
+```
+
+TypeScript:
+
+```ts
+import fs from "node:fs";
+import type { ResumeSchema } from "@averagehelper/resume-schema";
+import { validated } from "@averagehelper/resume-schema";
+const resume = JSON.parse(fs.readFileSync("resume.json", "utf8"));
+
+const resumeObject: ResumeSchema = await validated(resume); // throws if invalid
 ```
 
 The JSON Resume schema is available from:
