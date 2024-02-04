@@ -15,54 +15,80 @@ My goals for this project:
 - [x] Basic TypeScript declarations around exported structures
 - [x] Generate a TypeScript interface from the JSON schema, to make generic theme templates easier to construct
 - [x] Port to TypeScript
-- [ ] Clean up and update the changelog, perhaps using the [keep a changelog](https://keepachangelog.com) standard.
+- [x] Add a `Promise`-compatible interface for `validate`
+- [ ] Clean up and update the changelog, perhaps using the [keep a changelog](https://keepachangelog.com) standard
 - [ ] Simplify unit tests. Surely there's a way to generate each valid/invalid test case from the existing well-labeled valid/invalid test fixtures!
-- [ ] Add a `Promise`-compatible interface for `validate`
 - [ ] Build both legacy CJS and modern ESM bundles
 - [ ] Switch to tab indentation [for accessibility](https://www.reddit.com/r/javascript/comments/c8drjo/nobody_talks_about_the_real_reason_to_use_tabs/)
 
 I might add more as ideas come to me. I plan to open upstream pull requests once in a while. I'm not sure all of my changes will make it upstream, but a gal can try!
 
-A read-only mirror exists at [my Forgejo instance](https://git.average.name/AverageHelper/resume-schema).
+A read-only mirror exists at [my git forge](https://git.average.name/AverageHelper/resume-schema).
 
 ### Getting started
 
+This package requires Node 10 or newer.
+
 ```sh
-npm install --save @averagehelper/resume-schema
+npm install @averagehelper/resume-schema
 ```
 
-To use
+### Usage
+
+Basic:
 
 ```js
 const resumeSchema = require("@averagehelper/resume-schema");
-resumeSchema.validate(
-  { name: "Thomas" },
-  function (err, report) {
-    if (err) {
-      console.error("The resume was invalid:", err);
-      return;
-    }
-    console.log("Resume validated successfully:", report);
-  },
-  function (err) {
-    console.error("The resume was invalid:", err);
-  }
-);
+const resume = JSON.parse(fs.readFileSync("resume.json", "utf8"));
+
+try {
+  await resumeSchema.validate(resume);
+  console.log("Resume validated successfully!");
+} catch (error) {
+  console.error("The resume was invalid:", error);
+}
 ```
 
-More likely
+Simplified:
 
 ```js
-var fs = require("fs");
-var resumeSchema = require("@averagehelper/resume-schema");
-var resumeObject = JSON.parse(fs.readFileSync("resume.json", "utf8"));
-resumeSchema.validate(resumeObject);
+const fs = require("node:fs");
+const resumeSchema = require("@averagehelper/resume-schema");
+const resume = JSON.parse(fs.readFileSync("resume.json", "utf8"));
+
+const resumeObject = await resumeSchema.validated(resume); // throws if invalid
+```
+
+Callback:
+
+```js
+const fs = require("node:fs");
+const resumeSchema = require("@averagehelper/resume-schema");
+const resume = JSON.parse(fs.readFileSync("resume.json", "utf8"));
+
+resumeSchema.validate(resume, function (err, result) {
+  if (err) {
+    console.error("The resume was invalid:", error);
+  } else {
+    console.log("Resume validated successfully:", result);
+  }
+});
+```
+
+TypeScript compatible:
+
+```ts
+import fs from "node:fs";
+import { validated } from "@averagehelper/resume-schema";
+const resume = JSON.parse(fs.readFileSync("resume.json", "utf8"));
+
+const resumeObject = await validated(resume); // throws if invalid
 ```
 
 The JSON Resume schema is available from:
 
 ```js
-require("@averagehelper/resume-schema").schema;
+import { schema } from "@averagehelper/resume-schema";
 ```
 
 ### Contribute

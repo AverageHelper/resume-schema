@@ -17,6 +17,7 @@
 		"useUnknownInCatchVariables": true,
 		"noUncheckedIndexedAccess": true,
 		"forceConsistentCasingInFileNames": true,
+    "typeRoots": ["./resume.d.ts"]
   },
   "include": ["*.ts"]
 }
