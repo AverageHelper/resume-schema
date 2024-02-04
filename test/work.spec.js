@@ -1,5 +1,5 @@
 var test = require('tape');
-var { validate } = require('../validator');
+var { validate, validated } = require('../validator');
 const fixtures = require('./__test__/work.json');
 
 test('work - valid', (t) => {
@@ -15,6 +15,46 @@ test('work - invalid', (t) => {
     t.notEqual(err, null, 'err should contain an error');
     t.false(valid, 'valid is false');
   });
+  t.end();
+});
+
+test('work - valid async', async (t) => {
+  try {
+    await validate(fixtures.workValid);
+    t.pass('valid is true');
+  } catch (err) {
+    t.fail('err should be null', err);
+  }
+  t.end();
+});
+
+test('work - invalid async', async (t) => {
+  try {
+    await validate(fixtures.workInvalid);
+    t.fail('valid is false');
+  } catch (err) {
+    t.notEqual(err, null, 'err should contain an error');
+  }
+  t.end();
+});
+
+test('work - valid async simple', async (t) => {
+  try {
+    const workValid = await validated(fixtures.workValid);
+    t.deepEqual(workValid, fixtures.workValid);
+  } catch (err) {
+    t.fail('err should be null', err);
+  }
+  t.end();
+});
+
+test('work - invalid async simple', async (t) => {
+  try {
+    await validated(fixtures.workInvalid);
+    t.fail('valid is false');
+  } catch (err) {
+    t.notEqual(err, null, 'err should contain an error');
+  }
   t.end();
 });
 
