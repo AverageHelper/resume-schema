@@ -20,6 +20,7 @@ My goals for this project:
 - [ ] Simplify unit tests. Surely there's a way to generate each valid/invalid test case from the existing well-labeled valid/invalid test fixtures!
 - [ ] Build both legacy CJS and modern ESM bundles
 - [ ] Switch to tab indentation [for accessibility](https://www.reddit.com/r/javascript/comments/c8drjo/nobody_talks_about_the_real_reason_to_use_tabs/)
+- [ ] A real actual website! Need to work out whether one is even necessary, and what domain name to use. We have [jsonresume.average.name](https://jsonresume.average.name) for now, and that simply redirects here.
 
 I might add more as ideas come to me. I plan to open upstream pull requests once in a while. I'm not sure all of my changes will make it upstream, but a gal can try!
 
