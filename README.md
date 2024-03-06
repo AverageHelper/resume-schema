@@ -8,7 +8,7 @@
 Standard, Specification, Schema
 
 > [!NOTE]
-> This is a fork of [jsonresume/resume-schema](https://github.com/jsonresume/resume-schema).
+> This is a fork of [jsonresume/resume-schema](https://github.com/jsonresume/resume-schema). Learn more at [jsonresume.org](https://jsonresume.org).
 
 My goals for this project:
 - [x] Add a `basics.pronouns` field
