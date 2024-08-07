@@ -1,13 +1,13 @@
 import type { ResumeSchema } from './resume.d.ts';
-import ZSchema = require('z-schema');
+import jobSchema = require('./job-schema.json');
 import schema = require('./schema.json');
+import jsonschema = require('jsonschema');
+const Validator = jsonschema.Validator;
 
 // Generated schema interface types
 export type * from "./resume.d.ts";
 
-type ValidateCallback = (error: unknown, result?: { valid: boolean }) => unknown;
-
-type ZSchemaCallback = (error: unknown, valid: boolean) => unknown;
+type ValidateCallback = (error: unknown, valid: boolean) => unknown;
 
 /**
  * Asynchronously validates a given object against the JsonResume schema.
@@ -30,34 +30,31 @@ export function validate(resumeJson: object, callback: ValidateCallback): void;
 export function validate(resumeJson: object, callback?: ValidateCallback): void | Promise<void> {
   if (callback) {
     // Callback mode
-    const callbackWrapper: ZSchemaCallback = function (err, valid) {
-      if (err) {
-        // Invalid schema!
-        callback(err);
-      } else {
-        // Valid schema?
-        callback(null, { valid: valid });
-      }
+    const v = new Validator();
+    const validation = v.validate(resumeJson, schema);
+
+    if (!validation.valid) {
+      // Invalid schema!
+      callback(validation.errors, false);
+      return;
     }
 
-    new ZSchema({}).validate(resumeJson, schema, callbackWrapper);
+    // Valid schema!
+    callback(null, true);
   } else {
     // Promise mode
     return new Promise((resolve, reject) => {
-      const callbackWrapper: ZSchemaCallback = function (err, valid) {
-        if (err) {
-          // Invalid schema!
-          reject(err);
-        } else if (!valid) {
-          // Should be impossible
-          reject(new TypeError('z-schema returned `valid: false` with no error'));
-        } else {
-          // Valid schema!
-          resolve();
-        }
+      const v = new Validator();
+      const validation = v.validate(resumeJson, schema);
+
+      if (!validation.valid) {
+        // Invalid schema!
+        reject(validation.errors);
+        return;
       }
 
-      new ZSchema({}).validate(resumeJson, schema, callbackWrapper);
+      // Valid schema!
+      resolve();
     });
   }
 }
@@ -74,4 +71,4 @@ export async function validated(resumeJson: object): Promise<ResumeSchema> {
   return resumeJson;
 }
 
-export { schema };
+export { schema, jobSchema };

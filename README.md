@@ -28,8 +28,6 @@ A read-only mirror exists at [my git forge](https://git.average.name/AverageHelp
 
 ### Getting started
 
-This package requires Node 10 or newer.
-
 ```sh
 npm install @averagehelper/resume-schema
 ```
@@ -39,7 +37,8 @@ npm install @averagehelper/resume-schema
 Basic:
 
 ```js
-const resumeSchema = require("@averagehelper/resume-schema");
+import fs from "node:fs";
+import resumeSchema from "@averagehelper/resume-schema";
 const resume = JSON.parse(fs.readFileSync("resume.json", "utf8"));
 
 try {
@@ -128,6 +127,16 @@ Pull requests titles should be formatted as such
 ```
 
 `major` version bumps will be few and far between for this schema.
+
+### Job Description Schema
+
+A draft schema for job descriptions is available in this project as well. It is not yet finalized, but we encourage you to check it out and provide feedback. See `job-schema.json` and `sample.job.json`.
+
+The JSON Job schema is available from:
+
+```js
+require("@averagehelper/resume-schema").jobSchema;
+```
 
 ### Other resume standards
 
